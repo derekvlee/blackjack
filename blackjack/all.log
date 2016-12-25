@@ -1,0 +1,107 @@
+2016-12-25 10:49:12.774 [main] DEBUG com.dereklee.blackjack.model.GameMediator - GameMediator starting
+2016-12-25 10:49:12.777 [main] DEBUG com.dereklee.blackjack.Shoe - Shoe init
+2016-12-25 10:49:13.785 [main] DEBUG com.dereklee.blackjack.Shoe - cutPos: 35
+2016-12-25 10:49:13.786 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [0]Card [ jack  clubs  10 ]
+2016-12-25 10:49:13.787 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [1]Card [ six  hearts  6 ]
+2016-12-25 10:49:13.787 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [2]Card [ six  diamonds  6 ]
+2016-12-25 10:49:13.787 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [3]Card [ five  diamonds  5 ]
+2016-12-25 10:49:13.788 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [4]Card [ four  hearts  4 ]
+2016-12-25 10:49:13.788 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [5]Card [ three  spades  3 ]
+2016-12-25 10:49:13.788 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [6]Card [ four  diamonds  4 ]
+2016-12-25 10:49:13.788 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [7]Card [ king  hearts  10 ]
+2016-12-25 10:49:13.789 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [8]Card [ seven  clubs  7 ]
+2016-12-25 10:49:13.789 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [9]Card [ eight  hearts  8 ]
+2016-12-25 10:49:13.789 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [10]Card [ nine  clubs  9 ]
+2016-12-25 10:49:13.790 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [11]Card [ nine  diamonds  9 ]
+2016-12-25 10:49:13.790 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [12]Card [ two  clubs  2 ]
+2016-12-25 10:49:13.790 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [13]Card [ six  clubs  6 ]
+2016-12-25 10:49:13.791 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [14]Card [ eight  diamonds  8 ]
+2016-12-25 10:49:13.791 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [15]Card [ four  clubs  4 ]
+2016-12-25 10:49:13.791 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [16]Card [ ten  diamonds  10 ]
+2016-12-25 10:49:13.791 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [17]Card [ two  diamonds  2 ]
+2016-12-25 10:49:13.792 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [18]Card [ two  spades  2 ]
+2016-12-25 10:49:13.792 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [19]Card [ eight  spades  8 ]
+2016-12-25 10:49:13.792 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [20]Card [ jack  diamonds  10 ]
+2016-12-25 10:49:13.793 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [21]Card [ ten  hearts  10 ]
+2016-12-25 10:49:13.793 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [22]Card [ queen  hearts  10 ]
+2016-12-25 10:49:13.793 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [23]Card [ eight  clubs  8 ]
+2016-12-25 10:49:13.793 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [24]Card [ jack  spades  10 ]
+2016-12-25 10:49:13.794 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [25]Card [ king  diamonds  10 ]
+2016-12-25 10:49:13.794 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [26]Card [ five  hearts  5 ]
+2016-12-25 10:49:13.794 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [27]Card [ ace  spades  1 ]
+2016-12-25 10:49:13.795 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [28]Card [ three  clubs  3 ]
+2016-12-25 10:49:13.795 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [29]Card [ two  hearts  2 ]
+2016-12-25 10:49:13.795 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [30]Card [ four  spades  4 ]
+2016-12-25 10:49:13.795 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [31]Card [ ten  clubs  10 ]
+2016-12-25 10:49:13.796 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [32]Card [ nine  spades  9 ]
+2016-12-25 10:49:13.796 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [33]Card [ five  spades  5 ]
+2016-12-25 10:49:13.796 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [34]Card [ king  clubs  10 ]
+2016-12-25 10:49:13.797 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [35]Card [ cutting-card  no-suit  0 ]
+2016-12-25 10:49:13.797 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [36]Card [ queen  spades  10 ]
+2016-12-25 10:49:13.797 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [37]Card [ six  spades  6 ]
+2016-12-25 10:49:13.797 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [38]Card [ seven  hearts  7 ]
+2016-12-25 10:49:13.798 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [39]Card [ five  clubs  5 ]
+2016-12-25 10:49:13.798 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [40]Card [ ace  diamonds  1 ]
+2016-12-25 10:49:13.798 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [41]Card [ ace  clubs  1 ]
+2016-12-25 10:49:13.798 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [42]Card [ queen  clubs  10 ]
+2016-12-25 10:49:13.799 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [43]Card [ queen  diamonds  10 ]
+2016-12-25 10:49:13.799 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [44]Card [ nine  hearts  9 ]
+2016-12-25 10:49:13.799 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [45]Card [ seven  spades  7 ]
+2016-12-25 10:49:13.799 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [46]Card [ jack  hearts  10 ]
+2016-12-25 10:49:13.800 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [47]Card [ ace  hearts  1 ]
+2016-12-25 10:49:13.800 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [48]Card [ three  hearts  3 ]
+2016-12-25 10:49:13.800 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [49]Card [ king  spades  10 ]
+2016-12-25 10:49:13.800 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [50]Card [ three  diamonds  3 ]
+2016-12-25 10:49:13.801 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [51]Card [ ten  spades  10 ]
+2016-12-25 10:49:13.801 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [52]Card [ seven  diamonds  7 ]
+2016-12-25 10:49:13.801 [main] DEBUG com.dereklee.blackjack.util.BjUtil - 
+2016-12-25 10:49:13.802 [main] DEBUG com.dereklee.blackjack.model.GameMediator - finished dealing one card to each hand
+2016-12-25 10:49:13.802 [main] DEBUG com.dereklee.blackjack.model.GameMediator - finished dealing one card to each hand
+2016-12-25 10:49:13.803 [main] DEBUG com.dereklee.blackjack.model.AbstractHand - AbstractHand [handNum=1, card=Card [ four  hearts  4 ], cardsVal=14]
+2016-12-25 10:49:13.804 [main] DEBUG com.dereklee.blackjack.model.AbstractHand - AbstractHand [handNum=1, card=Card [ seven  clubs  7 ], cardsVal=21]
+2016-12-25 10:49:13.804 [main] DEBUG com.dereklee.blackjack.model.AbstractHand - AbstractHand [handNum=2, card=Card [ three  spades  3 ], cardsVal=9]
+2016-12-25 10:49:13.805 [main] DEBUG com.dereklee.blackjack.model.AbstractHand - AbstractHand [handNum=2, card=Card [ eight  hearts  8 ], cardsVal=17]
+2016-12-25 10:49:13.805 [main] DEBUG com.dereklee.blackjack.model.AbstractHand - AbstractHand [handNum=2, card=Card [ nine  clubs  9 ], cardsVal=26]
+2016-12-25 10:49:13.806 [main] DEBUG com.dereklee.blackjack.model.AbstractHand - AbstractHand [handNum=3, card=Card [ four  diamonds  4 ], cardsVal=10]
+2016-12-25 10:49:13.806 [main] DEBUG com.dereklee.blackjack.model.AbstractHand - AbstractHand [handNum=3, card=Card [ nine  diamonds  9 ], cardsVal=19]
+2016-12-25 10:49:13.806 [main] DEBUG com.dereklee.blackjack.model.AbstractHand - AbstractHand [handNum=3, card=Card [ two  clubs  2 ], cardsVal=21]
+2016-12-25 10:49:13.806 [main] DEBUG com.dereklee.blackjack.model.AbstractHand - AbstractHand [handNum=4, card=Card [ king  hearts  10 ], cardsVal=15]
+2016-12-25 10:49:13.807 [main] DEBUG com.dereklee.blackjack.model.AbstractHand - AbstractHand [handNum=4, card=Card [ six  clubs  6 ], cardsVal=21]
+2016-12-25 10:49:13.807 [main] DEBUG com.dereklee.blackjack.model.GameClient - Round ends..
+2016-12-25 10:49:13.807 [main] DEBUG com.dereklee.blackjack.model.GameMediator - finished dealing one card to each hand
+2016-12-25 10:49:13.808 [main] DEBUG com.dereklee.blackjack.model.GameMediator - finished dealing one card to each hand
+2016-12-25 10:49:13.808 [main] DEBUG com.dereklee.blackjack.model.AbstractHand - AbstractHand [handNum=1, card=Card [ two  spades  2 ], cardsVal=10]
+2016-12-25 10:49:13.808 [main] DEBUG com.dereklee.blackjack.model.AbstractHand - AbstractHand [handNum=1, card=Card [ queen  hearts  10 ], cardsVal=20]
+2016-12-25 10:49:13.809 [main] DEBUG com.dereklee.blackjack.model.AbstractHand - AbstractHand [handNum=1, card=Card [ eight  clubs  8 ], cardsVal=28]
+2016-12-25 10:49:13.809 [main] DEBUG com.dereklee.blackjack.model.AbstractHand - AbstractHand [handNum=2, card=Card [ eight  spades  8 ], cardsVal=12]
+2016-12-25 10:49:13.809 [main] DEBUG com.dereklee.blackjack.model.AbstractHand - AbstractHand [handNum=2, card=Card [ jack  spades  10 ], cardsVal=22]
+2016-12-25 10:49:13.810 [main] DEBUG com.dereklee.blackjack.model.AbstractHand - AbstractHand [handNum=3, card=Card [ jack  diamonds  10 ], cardsVal=20]
+2016-12-25 10:49:13.810 [main] DEBUG com.dereklee.blackjack.model.AbstractHand - AbstractHand [handNum=3, card=Card [ king  diamonds  10 ], cardsVal=30]
+2016-12-25 10:49:13.810 [main] DEBUG com.dereklee.blackjack.model.AbstractHand - AbstractHand [handNum=4, card=Card [ ten  hearts  10 ], cardsVal=12]
+2016-12-25 10:49:13.810 [main] DEBUG com.dereklee.blackjack.model.AbstractHand - AbstractHand [handNum=4, card=Card [ five  hearts  5 ], cardsVal=17]
+2016-12-25 10:49:13.811 [main] DEBUG com.dereklee.blackjack.model.AbstractHand - AbstractHand [handNum=4, card=Card [ ace  spades  1 ], cardsVal=18]
+2016-12-25 10:49:13.811 [main] DEBUG com.dereklee.blackjack.model.AbstractHand - AbstractHand [handNum=4, card=Card [ three  clubs  3 ], cardsVal=21]
+2016-12-25 10:49:13.811 [main] DEBUG com.dereklee.blackjack.model.GameClient - Round ends..
+2016-12-25 10:49:13.813 [main] DEBUG com.dereklee.blackjack.model.GameMediator - finished dealing one card to each hand
+2016-12-25 10:49:13.813 [main] DEBUG com.dereklee.blackjack.Shoe - card is cutting card
+2016-12-25 10:49:13.813 [main] DEBUG com.dereklee.blackjack.model.GameMediator - card is cutting card
+2016-12-25 10:49:13.813 [main] DEBUG com.dereklee.blackjack.model.GameMediator - finished dealing one card to each hand
+2016-12-25 10:49:13.814 [main] DEBUG com.dereklee.blackjack.model.AbstractHand - AbstractHand [handNum=1, card=Card [ five  spades  5 ], cardsVal=7]
+2016-12-25 10:49:13.814 [main] DEBUG com.dereklee.blackjack.model.AbstractHand - AbstractHand [handNum=1, card=Card [ six  spades  6 ], cardsVal=13]
+2016-12-25 10:49:13.814 [main] DEBUG com.dereklee.blackjack.model.AbstractHand - AbstractHand [handNum=1, card=Card [ seven  hearts  7 ], cardsVal=20]
+2016-12-25 10:49:13.814 [main] DEBUG com.dereklee.blackjack.model.AbstractHand - AbstractHand [handNum=1, card=Card [ five  clubs  5 ], cardsVal=25]
+2016-12-25 10:49:13.815 [main] DEBUG com.dereklee.blackjack.model.AbstractHand - AbstractHand [handNum=2, card=Card [ king  clubs  10 ], cardsVal=14]
+2016-12-25 10:49:13.815 [main] DEBUG com.dereklee.blackjack.model.AbstractHand - AbstractHand [handNum=2, card=Card [ ace  diamonds  1 ], cardsVal=15]
+2016-12-25 10:49:13.815 [main] DEBUG com.dereklee.blackjack.model.AbstractHand - AbstractHand [handNum=2, card=Card [ ace  clubs  1 ], cardsVal=16]
+2016-12-25 10:49:13.815 [main] DEBUG com.dereklee.blackjack.model.AbstractHand - AbstractHand [handNum=2, card=Card [ queen  clubs  10 ], cardsVal=26]
+2016-12-25 10:49:13.816 [main] DEBUG com.dereklee.blackjack.model.AbstractHand - AbstractHand [handNum=3, card=Card [ cutting-card  no-suit  0 ], cardsVal=10]
+2016-12-25 10:49:13.816 [main] DEBUG com.dereklee.blackjack.model.AbstractHand - AbstractHand [handNum=3, card=Card [ queen  diamonds  10 ], cardsVal=20]
+2016-12-25 10:49:13.816 [main] DEBUG com.dereklee.blackjack.model.AbstractHand - AbstractHand [handNum=3, card=Card [ nine  hearts  9 ], cardsVal=29]
+2016-12-25 10:49:13.816 [main] DEBUG com.dereklee.blackjack.model.AbstractHand - AbstractHand [handNum=4, card=Card [ queen  spades  10 ], cardsVal=19]
+2016-12-25 10:49:13.817 [main] DEBUG com.dereklee.blackjack.model.AbstractHand - AbstractHand [handNum=4, card=Card [ seven  spades  7 ], cardsVal=26]
+2016-12-25 10:49:13.817 [main] DEBUG com.dereklee.blackjack.model.GameClient - Round ends..
+2016-12-25 10:49:13.817 [main] DEBUG com.dereklee.blackjack.model.GameMediator - finished dealing one card to each hand
+2016-12-25 10:49:13.818 [main] ERROR com.dereklee.blackjack.model.GameMediator - no more cards
+2016-12-25 10:49:13.818 [main] DEBUG com.dereklee.blackjack.model.GameMediator - finished dealing one card to each hand
+2016-12-25 10:49:13.818 [main] DEBUG com.dereklee.blackjack.model.GameClient - Round ends..
+2016-12-25 10:49:13.818 [main] DEBUG com.dereklee.blackjack.model.GameClient - Game Client ends..
