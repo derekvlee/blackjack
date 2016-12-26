@@ -15,7 +15,6 @@ public class GameClient {
 		// wanted to use observer pattern to notify Hands of dealers up-card.
 		// I think it's best to keep the dealing logic inside GameMediator.
 		
-		// TODO save as Git project 
 		GameMediator gm = new GameMediator(1);
 		client.runRound(gm);
 		client.runRound(gm);

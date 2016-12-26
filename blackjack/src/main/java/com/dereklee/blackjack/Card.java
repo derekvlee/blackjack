@@ -3,10 +3,10 @@ package com.dereklee.blackjack;
 public abstract class Card implements CardI {
 
 	private int value;
-	private String suit;
+	private Suit   suit;
 	private String name;	
-
-	public Card(int val, String suit, String name) {
+	
+	public Card(int val, Suit suit, String name) {
 		this.value = val;
 		this.suit = suit;
 		this.name = name;
@@ -16,7 +16,7 @@ public abstract class Card implements CardI {
 		return value;
 	}
 
-	public String getSuit() {
+	public Suit getSuit() {
 		return suit;
 	}
 
@@ -25,13 +25,6 @@ public abstract class Card implements CardI {
 	}
 
 	@Override
-	public String toString() {
-		//return "Card [value=" + value + ", suit=" + suit + ", name=" + name + "]";
-		//return "Card [value=" + value + ", suit=" + suit + ", name=" + name + "]";
-		return "Card [ " +name + "  " + suit + "  " + value + " ]";
-	}	
-	
-	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
@@ -39,6 +32,11 @@ public abstract class Card implements CardI {
 		result = prime * result + ((suit == null) ? 0 : suit.hashCode());
 		result = prime * result + value;
 		return result;
+	}
+
+	@Override
+	public String toString() {
+		return "Card [ " +name + "  " + suit + "  " + value + " ]";
 	}
 
 	@Override
@@ -55,13 +53,13 @@ public abstract class Card implements CardI {
 				return false;
 		} else if (!name.equals(other.name))
 			return false;
-		if (suit == null) {
-			if (other.suit != null)
-				return false;
-		} else if (!suit.equals(other.suit))
+		if (suit != other.suit)
 			return false;
 		if (value != other.value)
 			return false;
 		return true;
 	}
+
+
+
 }

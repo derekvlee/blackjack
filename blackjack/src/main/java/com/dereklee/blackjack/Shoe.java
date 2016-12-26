@@ -31,11 +31,48 @@ public class Shoe {
 	private CardI		nextCard;
 	private Logger 		logger = LogManager.getLogger();
 	
+
 	public Shoe(int numDecks) {
 		this.numDecks = numDecks;
 		init();			
 	}
 	
+	public Shoe(int numDecks, boolean isTest) {
+		this.numDecks = numDecks;
+		if (isTest) {
+			initTest();			
+		} else {
+			init();
+		}
+	}
+	
+	// creates a simple deck for testing
+	private void initTest() {
+		logger.debug("Shoe init Test");
+		decks = new ArrayList<CardI>();
+		List<CardI> decksTmp = new ArrayList<CardI>();
+		for (int i = 0; i < numDecks; i++) {
+			decksTmp.addAll(new StandardDeck(true).getDeck());
+		}
+		decks = decksTmp;
+		// add cutting card at cutting position = 1/3 of end decks.
+		int cutPos = (decks.size() - (decks.size()/3)) ;
+		logger.debug("cutPos: " + cutPos);
+		decks.add(cutPos,new CuttingCard(0, Suit.NO_SUIT, "cutting-card"));
+		shoeIt = decks.iterator();
+		
+		BjUtil.printAll(decks);
+		
+		if(shoeIt.hasNext()) {
+			nextCard = shoeIt.next();
+		}
+	}
+
+	/**
+	 * Fills the Shoe with 'n' shuffled standard decks.
+	 * Inserts a cutting card.
+	 * Prepares the shoe Iterator<CardI> ready to dispense the first playing card.
+	 */
 	private void init()  {	
 		logger.debug("Shoe init");
 		decks = new ArrayList<CardI>();
@@ -48,7 +85,7 @@ public class Shoe {
 		// add cutting card at cutting position = 1/3 of end decks.
 		int cutPos = (decks.size() - (decks.size()/3)) ;
 		logger.debug("cutPos: " + cutPos);
-		decks.add(cutPos,new CuttingCard(0, "no-suit", "cutting-card"));
+		decks.add(cutPos,new CuttingCard(0, Suit.NO_SUIT, "cutting-card"));
 		shoeIt = decks.iterator();
 		
 		BjUtil.printAll(decks);
@@ -58,6 +95,7 @@ public class Shoe {
 		}
 	}	
 
+	// generate a random long based on the current time in milliseconds
 	private long genRand() {
 		randInt = new Random(System.currentTimeMillis()).nextInt(BOUNDS);
 		randLong = new Random(System.currentTimeMillis()).nextLong();
@@ -77,7 +115,7 @@ public class Shoe {
 		CardI card = nextCard;
 		if(shoeIt.hasNext()) {
 			nextCard = shoeIt.next();
-			if(nextCard.equals(new CuttingCard(0, "no-suit", "cutting-card"))){
+			if(nextCard.equals(new CuttingCard(0, Suit.NO_SUIT, "cutting-card"))){
 				logger.debug("card is cutting card");
 			}
 		} else {

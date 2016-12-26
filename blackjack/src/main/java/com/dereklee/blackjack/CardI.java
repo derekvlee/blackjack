@@ -4,7 +4,7 @@ public interface CardI {
 
 	int getValue();
 	
-	String getSuit();
+	Suit getSuit();
 	
 	String getName();
 }
