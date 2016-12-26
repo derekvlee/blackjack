@@ -1,6 +1,6 @@
 package com.dereklee.blackjack.model;
 
-public enum Option {
+public enum CardOption {
 	
 	HIT
 	, STAND

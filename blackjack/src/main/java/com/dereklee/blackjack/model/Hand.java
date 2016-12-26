@@ -18,4 +18,11 @@ public class Hand extends AbstractHand {
 	public void stand() {
 	}
 
+	/**
+	 * The dealer (Observable) invokes this method, to notify it's Observer's (Hands). 
+	 */
+	public void update(CardI upCard) {
+		logger.debug( "[" + this.handNum + "]" + " Dealers up Card: " + upCard);
+	}
+
 }

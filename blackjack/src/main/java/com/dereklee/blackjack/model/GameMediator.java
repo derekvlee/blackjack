@@ -116,7 +116,7 @@ public class GameMediator implements MediatorI, Iterator<AbstractHand> {
 	/**
 	 * CallBack method, invoked by each Hand. 
 	 */
-	public void sendCallBack(Option option, AbstractHand aHand) {
+	public void sendCallBack(CardOption option, AbstractHand aHand) {
 		//this.currHand = aHand; // TODO is the given Hand reference needed?
 		switch(option) {
 		case HIT:
@@ -146,6 +146,5 @@ public class GameMediator implements MediatorI, Iterator<AbstractHand> {
 	public AbstractHand next() {
 		return handIt.next();
 	}
-
 
 }

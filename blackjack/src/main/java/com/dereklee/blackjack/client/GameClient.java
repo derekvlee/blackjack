@@ -1,7 +1,12 @@
-package com.dereklee.blackjack.model;
+package com.dereklee.blackjack.client;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
+import com.dereklee.blackjack.model.DealerHand;
+import com.dereklee.blackjack.model.DealerHandObs;
+import com.dereklee.blackjack.model.GameMediator;
+import com.dereklee.blackjack.model.Hand;
 
 public class GameClient {
 
@@ -24,9 +29,13 @@ public class GameClient {
 	}
 	
 	void runRound(GameMediator gm) {
-		for (int i=1; i<5; i++) {
+		DealerHandObs dealer = null;
+		int i=0;
+		for (i=1; i<5; i++) {
 			gm.addHand(new Hand(gm,i));
 		}
+		dealer = new DealerHandObs(gm,i);
+		gm.addHand(dealer);
 		gm.runRound();
 		logger.debug("Round ends..");
 	}

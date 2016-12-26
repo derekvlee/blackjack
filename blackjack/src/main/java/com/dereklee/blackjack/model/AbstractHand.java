@@ -4,18 +4,21 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.dereklee.blackjack.CardI;
+import com.dereklee.blackjack.util.BjConstants;
 
-public abstract class AbstractHand {
+public abstract class AbstractHand implements ObserverI {
 
-	private 	MediatorI mediator;
-	private 	int	  	  handNum;
+	protected 	MediatorI mediator;
+	protected 	int	  	  handNum;
 	protected 	CardI	  card;
 	protected	int		  cardsVal;
-	private 	Logger 	  logger = LogManager.getLogger();
+	protected 	Logger 	  logger = LogManager.getLogger();
+	protected   int		  standNum;
 	
 	public AbstractHand(MediatorI mediator, int num) {
 		this.mediator = mediator;
 		this.handNum = num;
+		this.standNum = BjConstants.PLAYER_STAND; // default
 	}
 	
 	public abstract void hit(CardI card);
@@ -37,10 +40,10 @@ public abstract class AbstractHand {
 		// TODO makeDecision based on strategy
 		// TODO hand need notification on dealers up card
 		logger.debug(toString());
-		if (cardsVal<21) {
-			mediator.sendCallBack(Option.HIT, this);
+		if (cardsVal < standNum) {
+			mediator.sendCallBack(CardOption.HIT, this);
 		} else {
-			mediator.sendCallBack(Option.STAND, this);
+			mediator.sendCallBack(CardOption.STAND, this);
 		}
 	}
 
