@@ -1,5 +1,7 @@
 package com.dereklee.blackjack.model;
 
+import java.util.Observable;
+
 import com.dereklee.blackjack.CardI;
 import com.dereklee.blackjack.util.BjConstants;
 
@@ -15,7 +17,14 @@ public class DealerHand extends AbstractHand {
 
 	@Override
 	public void hit(CardI card) {
-		this.card = card;
+		logger.debug("[" + this.handNum + "]" + " hit with: " + card.toString());
+		this.card = card;		
+		if (upCard == null && holeCard == null && cardsVal == 0) {
+			// implies initial deal
+			upCard = card;
+			// let the Mediator notify the observers of the up-card
+			notifyMediator();
+		}
 		this.cardsVal += card.getValue();
 	}
 
@@ -33,9 +42,13 @@ public class DealerHand extends AbstractHand {
 		return upCard;
 	}
 
-	public void update(CardI upCard) {
+	public void update(Observable o, Object arg) {
 		// n/a for the dealer
-		logger.error("ERROR: SHOULD NOT BE INVOKED");
+		logger.error("ERROR: DealerHand SHOULD NOT BE INVOKED for update on " + arg.toString());
+	}
+	
+	private void notifyMediator() {
+		mediator.sendCallBack(CardOption.DEALERS_UPCARD, this);
 	}
 
 }

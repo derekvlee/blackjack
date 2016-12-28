@@ -4,5 +4,6 @@ public enum CardOption {
 	
 	HIT
 	, STAND
+	, DEALERS_UPCARD
 	;
 }

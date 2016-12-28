@@ -3,6 +3,7 @@ package com.dereklee.blackjack.model;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Observable;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -12,7 +13,7 @@ import com.dereklee.blackjack.CuttingCard;
 import com.dereklee.blackjack.Shoe;
 import com.dereklee.blackjack.Suit;
 
-public class GameMediator implements MediatorI, Iterator<AbstractHand> {
+public class GameMediator extends Observable implements MediatorI, Iterator<AbstractHand> {
 	
 	private List<AbstractHand> 		hands;
 	private Iterator<AbstractHand>	handIt;
@@ -34,8 +35,16 @@ public class GameMediator implements MediatorI, Iterator<AbstractHand> {
 		shoe = new Shoe(numDecks, isTest);
 	}	
 	
+	/**
+	 * Add each hand to a list of hands.
+	 * Also add each hand (observer) to the Observable collection excluding the Dealer's Hand.
+	 * @param hand
+	 */
 	public void addHand(AbstractHand hand) {
 		hands.add(hand);
+		if(!(hand instanceof DealerHand)) {
+			this.addObserver(hand);
+		}
 	}	
 
 	public void runRound() {
@@ -59,7 +68,8 @@ public class GameMediator implements MediatorI, Iterator<AbstractHand> {
 	private void initDeal() {
 		handIt = hands.iterator(); 
 		while(hasNext() && !bRoundOver) {
-			dealCard(next());
+			AbstractHand aHand = next();
+			dealCard(aHand);
 		}
 	}
 
@@ -90,6 +100,7 @@ public class GameMediator implements MediatorI, Iterator<AbstractHand> {
 	
 	private void reset() {
 		hands.clear();
+		this.deleteObservers();
 	}
 	
 	/**
@@ -106,6 +117,7 @@ public class GameMediator implements MediatorI, Iterator<AbstractHand> {
 				
 			}
 			aHand.hit(card);
+
 		} else {			
 			// no more cards in the deck
 			bRoundOver = true;
@@ -114,7 +126,8 @@ public class GameMediator implements MediatorI, Iterator<AbstractHand> {
 	}
 
 	/**
-	 * CallBack method, invoked by each Hand. 
+	 * CallBack method, invoked by each Hand when it's asked to make a decision on how to play/proceed.
+	 * Also used by Dealer to signify it's up-card. 
 	 */
 	public void sendCallBack(CardOption option, AbstractHand aHand) {
 		//this.currHand = aHand; // TODO is the given Hand reference needed?
@@ -125,6 +138,13 @@ public class GameMediator implements MediatorI, Iterator<AbstractHand> {
 		case STAND:
 			// get the next hand.
 			hand = hasNext() ? next() : null;
+			break;
+		case DEALERS_UPCARD:
+			if(aHand instanceof DealerHand) { // only for initial deal
+				this.setChanged();
+				this.notifyObservers(((DealerHand) aHand).getUpCard());
+				this.clearChanged();
+			}
 			break;
 		default:
 			
@@ -138,13 +158,23 @@ public class GameMediator implements MediatorI, Iterator<AbstractHand> {
 	public boolean isRoundOver() {
 		return bRoundOver; 
 	}
-
+	
+	/**
+	 * Has Next Hand
+	 */
 	public boolean hasNext() {
 		return handIt.hasNext();
 	}
-
+	
+	/**
+	 * Next Hand
+	 */
 	public AbstractHand next() {
 		return handIt.next();
 	}
 
+	///////////////////////////////////////////////////////
+	//
+	
+	
 }

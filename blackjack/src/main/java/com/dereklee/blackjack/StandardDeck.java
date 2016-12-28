@@ -47,10 +47,6 @@ public class StandardDeck implements DeckI {
 		// create 52 standard cards
 		sortedDeck = new ArrayList<CardI>();
 		deck = new ArrayList<CardI>();
-//		createSuit("spades");
-//		createSuit("hearts");
-//		createSuit("clubs");
-//		createSuit("diamonds");
 		createSuit(Suit.SPADES);
 		createSuit(Suit.HEARTS);
 		createSuit(Suit.CLUBS);

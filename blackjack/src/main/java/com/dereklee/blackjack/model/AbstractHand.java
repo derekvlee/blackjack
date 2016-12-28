@@ -1,12 +1,14 @@
 package com.dereklee.blackjack.model;
 
+import java.util.Observer;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.dereklee.blackjack.CardI;
 import com.dereklee.blackjack.util.BjConstants;
 
-public abstract class AbstractHand implements ObserverI {
+public abstract class AbstractHand implements Observer {
 
 	protected 	MediatorI mediator;
 	protected 	int	  	  handNum;

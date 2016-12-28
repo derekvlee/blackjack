@@ -29,12 +29,12 @@ public class GameClient {
 	}
 	
 	void runRound(GameMediator gm) {
-		DealerHandObs dealer = null;
+		DealerHand dealer = null;
 		int i=0;
 		for (i=1; i<5; i++) {
 			gm.addHand(new Hand(gm,i));
 		}
-		dealer = new DealerHandObs(gm,i);
+		dealer = new DealerHand(gm,i);
 		gm.addHand(dealer);
 		gm.runRound();
 		logger.debug("Round ends..");

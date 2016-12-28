@@ -1,5 +1,7 @@
 package com.dereklee.blackjack.model;
 
+import java.util.Observable;
+
 import com.dereklee.blackjack.CardI;
 
 public class Hand extends AbstractHand {
@@ -10,6 +12,7 @@ public class Hand extends AbstractHand {
 
 	@Override
 	public void hit(CardI card) {
+		logger.debug("[" + this.handNum + "]" + " hit with: " + card.toString());
 		this.card = card;
 		this.cardsVal += card.getValue();
 	}
@@ -18,11 +21,9 @@ public class Hand extends AbstractHand {
 	public void stand() {
 	}
 
-	/**
-	 * The dealer (Observable) invokes this method, to notify it's Observer's (Hands). 
-	 */
-	public void update(CardI upCard) {
-		logger.debug( "[" + this.handNum + "]" + " Dealers up Card: " + upCard);
+	// Observer 
+	public void update(Observable o, Object arg) {
+		logger.debug( "[" + this.handNum + "]" + " Dealers up Card: " + arg.toString() );
 	}
 
 }

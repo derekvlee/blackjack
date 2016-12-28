@@ -2,6 +2,7 @@ package com.dereklee.blackjack.model;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Observable;
 
 import com.dereklee.blackjack.CardI;
 import com.dereklee.blackjack.util.BjConstants;
@@ -54,6 +55,9 @@ public class DealerHandObs extends AbstractHand implements ObservableI {
 	public void update(CardI upCard) {
 		// n/a for the dealer
 		logger.error("ERROR: SHOULD NOT BE INVOKED");
+	}
+
+	public void update(Observable o, Object arg) {
 	}
 
 }
