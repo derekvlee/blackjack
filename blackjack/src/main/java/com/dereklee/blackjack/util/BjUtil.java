@@ -7,6 +7,8 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.dereklee.blackjack.CardI;
+import com.dereklee.blackjack.cards.creator.CardDeckShuffleFactory;
+import com.dereklee.blackjack.cards.product.CardDeck;
 
 public class BjUtil {
 	
@@ -51,5 +53,7 @@ public class BjUtil {
 			logger.debug("");
 		}
 		logger.debug("");
-	}	
+	}
+
+
 }

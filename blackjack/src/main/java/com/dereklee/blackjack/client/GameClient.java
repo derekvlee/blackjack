@@ -3,6 +3,11 @@ package com.dereklee.blackjack.client;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import com.dereklee.blackjack.Shoe;
+import com.dereklee.blackjack.cards.creator.CardDeckFactory;
+import com.dereklee.blackjack.cards.creator.StandardDeckFactory;
+import com.dereklee.blackjack.cards.creator.StandardDeckShuffleFactory;
+import com.dereklee.blackjack.cards.product.CardDeckType;
 import com.dereklee.blackjack.model.DealerHand;
 import com.dereklee.blackjack.model.DealerHandObs;
 import com.dereklee.blackjack.model.GameMediator;
@@ -15,12 +20,10 @@ public class GameClient {
 	public static void main(String[] args) {
 		
 		GameClient client = new GameClient();
-		// TODO could do initial two card deal first
-		// but also need to handle cutting card and no more cards
-		// wanted to use observer pattern to notify Hands of dealers up-card.
-		// I think it's best to keep the dealing logic inside GameMediator.
+		CardDeckFactory fact = new StandardDeckFactory(new StandardDeckShuffleFactory());
+		Shoe shoe = new Shoe(1, new StandardDeckFactory(), CardDeckType.SIMPLE_STANDARD_DECK);
 		
-		GameMediator gm = new GameMediator(1);
+		GameMediator gm = new GameMediator(shoe);
 		client.runRound(gm);
 		client.runRound(gm);
 		client.runRound(gm);

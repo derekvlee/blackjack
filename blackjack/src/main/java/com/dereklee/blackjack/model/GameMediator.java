@@ -13,28 +13,31 @@ import com.dereklee.blackjack.CuttingCard;
 import com.dereklee.blackjack.Shoe;
 import com.dereklee.blackjack.Suit;
 
+/**
+ * 
+ * @author Derek
+ *
+ */
 public class GameMediator extends Observable implements MediatorI, Iterator<AbstractHand> {
 	
+	private Logger logger = LogManager.getLogger();
 	private List<AbstractHand> 		hands;
 	private Iterator<AbstractHand>	handIt;
 	private AbstractHand 			hand; 	// current hand
 	private	Shoe 					shoe;
 	private boolean					bCutCard;
-	private Logger logger = LogManager.getLogger();
-	private boolean 				bRoundOver;
+	private boolean 				bRoundOver;	
 	
-	public GameMediator(int numDecks) {
-		logger.debug("GameMediator starting");	
+	/**
+	 * Sets the initial fields. 
+	 * @param shoe a dealers shoe which contains the playing card deck(s).
+	 */
+	public GameMediator(Shoe shoe) {
+		logger.debug("GameMediator starting");
+		this.shoe = shoe;
 		hands = new ArrayList<AbstractHand>();
-		shoe = new Shoe(numDecks);
 	}
-	
-	public GameMediator(int numDecks, boolean isTest) {
-		logger.debug("GameMediator starting Test");	
-		hands = new ArrayList<AbstractHand>();
-		shoe = new Shoe(numDecks, isTest);
-	}	
-	
+
 	/**
 	 * Add each hand to a list of hands.
 	 * Also add each hand (observer) to the Observable collection excluding the Dealer's Hand.
@@ -46,7 +49,8 @@ public class GameMediator extends Observable implements MediatorI, Iterator<Abst
 			this.addObserver(hand);
 		}
 	}	
-
+	
+	// Responsible for invoking the initial two card deal to each Hand, including the dealer.
 	public void runRound() {
 		if(isGameOver()) {
 			logger.debug("unable to run round, cutting card dispensed in previous round");
@@ -64,7 +68,7 @@ public class GameMediator extends Observable implements MediatorI, Iterator<Abst
 		runRound_();
 	}
 	
-	// deal 1 card to each Hand (TODO incl., dealer)
+	// Deal a single card to each Hand
 	private void initDeal() {
 		handIt = hands.iterator(); 
 		while(hasNext() && !bRoundOver) {
@@ -74,12 +78,12 @@ public class GameMediator extends Observable implements MediatorI, Iterator<Abst
 	}
 
 	/**
+	 * Starts offering to deal to the first hand, invoking a 'makeDecision()' on the hand. Waits (synchronous) for a callback on the decision. 
+	 * Continues offering to deal to all playing Hands for this round.
+	 * 
 	 * PreCondition: 
 	 * 	The Game has dealt the initial two cards to all playing 'Hands' including the Dealer.
 	 *  The dealers up-card has been notified to all playing Hands.
-	 * 
-	 * runRound_(): starts the dealing to the first hand, this class then waits for a callback on the decision. 
-	 * This runRound_ method continues dealing to all playing Hands for this round.
 	 * 
 	 * PostCondition:
 	 *  The dealer needs to turn over her down-card and decide to hit/stand. (Note:
@@ -88,8 +92,8 @@ public class GameMediator extends Observable implements MediatorI, Iterator<Abst
 	 */
 	public void runRound_() {
 		handIt = hands.iterator();
-		if (hasNext()) {
-			hand = next();
+		if (hasNext()) { // hasNext Hand
+			hand = next(); // get next Hand
 			while(hand != null && !bRoundOver) {			
 				hand.makeDecision();
 			}
@@ -98,6 +102,9 @@ public class GameMediator extends Observable implements MediatorI, Iterator<Abst
 		}
 	}
 	
+	/**
+	 * End of Round: Tidy up loose ends.
+	 */
 	private void reset() {
 		hands.clear();
 		this.deleteObservers();
