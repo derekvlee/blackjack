@@ -1,0 +1,27 @@
+31/12
+Next: 
+- add a GameFactory (AbstractFactory) and pass to GameMediator.
+- GameMediatorTest: implement tests,
+DONE - Fix bug: cutting card given on initial deal
+DONE (ltd.)- need functionality to assert the hands cardValue
+- add header comments to each class
+- consider creating a professional document on the project, it would contain UML diagrams and notes on obstacles and progress.
+
+
+Next - further:
+- Associate Player(s) with each Hand
+- Associate a bank roll to finance each Player
+- Implement the strategy 
+
+
+Future:
+- Machine Learning - let the machine learn how to play BJ. it must come up with it's own strategy. how does this differ from basic strategy?
+- Card counting - could be a special observer, recording the card count for the game. It's algorithm needs to be de-coupled from the Implementation.
+- Simulation - large scale
+- How could I incorporate web-services into this project?
+- Design and Create a web based front end.
+- Add persistence using Hibernate.
+- Add threading.
+
+
+ 

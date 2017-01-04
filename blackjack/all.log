@@ -1,130 +1,56 @@
-2016-12-30 19:15:27.063 [main] DEBUG com.dereklee.blackjack.Shoe - Shoe init
-2016-12-30 19:15:28.068 [main] DEBUG com.dereklee.blackjack.Shoe - cutPos: 9
-2016-12-30 19:15:28.071 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [0]Card [ king  DIAMONDS  10 ]
-2016-12-30 19:15:28.071 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [1]Card [ queen  DIAMONDS  10 ]
-2016-12-30 19:15:28.071 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [2]Card [ jack  DIAMONDS  10 ]
-2016-12-30 19:15:28.072 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [3]Card [ ten  DIAMONDS  10 ]
-2016-12-30 19:15:28.072 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [4]Card [ nine  DIAMONDS  9 ]
-2016-12-30 19:15:28.072 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [5]Card [ eight  DIAMONDS  8 ]
-2016-12-30 19:15:28.073 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [6]Card [ seven  DIAMONDS  7 ]
-2016-12-30 19:15:28.073 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [7]Card [ six  DIAMONDS  6 ]
-2016-12-30 19:15:28.073 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [8]Card [ five  DIAMONDS  5 ]
-2016-12-30 19:15:28.073 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [9]Card [ cutting-card  NO_SUIT  0 ]
-2016-12-30 19:15:28.074 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [10]Card [ four  DIAMONDS  4 ]
-2016-12-30 19:15:28.074 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [11]Card [ three  DIAMONDS  3 ]
-2016-12-30 19:15:28.074 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [12]Card [ two  DIAMONDS  2 ]
-2016-12-30 19:15:28.075 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [13]Card [ ace  DIAMONDS  1 ]
-2016-12-30 19:15:28.075 [main] DEBUG com.dereklee.blackjack.util.BjUtil - 
-2016-12-30 19:15:28.076 [main] DEBUG com.dereklee.blackjack.model.GameMediator - GameMediator starting
-2016-12-30 19:15:28.077 [main] DEBUG com.dereklee.blackjack.model.GameMediator - Dealing initial two cards to 5 hands for a total of: 10 cards
-2016-12-30 19:15:28.077 [main] DEBUG com.dereklee.blackjack.model.AbstractHand - [1] hit with: Card [ king  DIAMONDS  10 ]
-2016-12-30 19:15:28.078 [main] DEBUG com.dereklee.blackjack.model.AbstractHand - [2] hit with: Card [ queen  DIAMONDS  10 ]
-2016-12-30 19:15:28.078 [main] DEBUG com.dereklee.blackjack.model.AbstractHand - [3] hit with: Card [ jack  DIAMONDS  10 ]
-2016-12-30 19:15:28.078 [main] DEBUG com.dereklee.blackjack.model.AbstractHand - [4] hit with: Card [ ten  DIAMONDS  10 ]
-2016-12-30 19:15:28.079 [main] DEBUG com.dereklee.blackjack.model.AbstractHand - [5] hit with: Card [ nine  DIAMONDS  9 ]
-2016-12-30 19:15:28.080 [main] DEBUG com.dereklee.blackjack.model.AbstractHand - [4] Dealers up Card: Card [ nine  DIAMONDS  9 ]
-2016-12-30 19:15:28.080 [main] DEBUG com.dereklee.blackjack.model.AbstractHand - [3] Dealers up Card: Card [ nine  DIAMONDS  9 ]
-2016-12-30 19:15:28.081 [main] DEBUG com.dereklee.blackjack.model.AbstractHand - [2] Dealers up Card: Card [ nine  DIAMONDS  9 ]
-2016-12-30 19:15:28.081 [main] DEBUG com.dereklee.blackjack.model.AbstractHand - [1] Dealers up Card: Card [ nine  DIAMONDS  9 ]
-2016-12-30 19:15:28.081 [main] DEBUG com.dereklee.blackjack.model.AbstractHand - [1] hit with: Card [ eight  DIAMONDS  8 ]
-2016-12-30 19:15:28.082 [main] DEBUG com.dereklee.blackjack.model.AbstractHand - [2] hit with: Card [ seven  DIAMONDS  7 ]
-2016-12-30 19:15:28.082 [main] DEBUG com.dereklee.blackjack.model.AbstractHand - [3] hit with: Card [ six  DIAMONDS  6 ]
-2016-12-30 19:15:28.082 [main] DEBUG com.dereklee.blackjack.Shoe - card is cutting card
-2016-12-30 19:15:28.083 [main] DEBUG com.dereklee.blackjack.model.AbstractHand - [4] hit with: Card [ five  DIAMONDS  5 ]
-2016-12-30 19:15:28.083 [main] DEBUG com.dereklee.blackjack.model.GameMediator - card is cutting card
-2016-12-30 19:15:28.083 [main] DEBUG com.dereklee.blackjack.model.AbstractHand - [5] hit with: Card [ cutting-card  NO_SUIT  0 ]
-2016-12-30 19:15:28.084 [main] DEBUG com.dereklee.blackjack.model.AbstractHand - AbstractHand [handNum=1, card=Card [ eight  DIAMONDS  8 ], cardsVal=18]
-2016-12-30 19:15:28.084 [main] DEBUG com.dereklee.blackjack.model.AbstractHand - [1] hit with: Card [ four  DIAMONDS  4 ]
-2016-12-30 19:15:28.084 [main] DEBUG com.dereklee.blackjack.model.AbstractHand - AbstractHand [handNum=1, card=Card [ four  DIAMONDS  4 ], cardsVal=22]
-2016-12-30 19:15:28.085 [main] DEBUG com.dereklee.blackjack.model.AbstractHand - AbstractHand [handNum=2, card=Card [ seven  DIAMONDS  7 ], cardsVal=17]
-2016-12-30 19:15:28.085 [main] DEBUG com.dereklee.blackjack.model.AbstractHand - [2] hit with: Card [ three  DIAMONDS  3 ]
-2016-12-30 19:15:28.085 [main] DEBUG com.dereklee.blackjack.model.AbstractHand - AbstractHand [handNum=2, card=Card [ three  DIAMONDS  3 ], cardsVal=20]
-2016-12-30 19:15:28.085 [main] DEBUG com.dereklee.blackjack.model.AbstractHand - [2] hit with: Card [ two  DIAMONDS  2 ]
-2016-12-30 19:15:28.086 [main] DEBUG com.dereklee.blackjack.model.AbstractHand - AbstractHand [handNum=2, card=Card [ two  DIAMONDS  2 ], cardsVal=22]
-2016-12-30 19:15:28.086 [main] DEBUG com.dereklee.blackjack.model.AbstractHand - AbstractHand [handNum=3, card=Card [ six  DIAMONDS  6 ], cardsVal=16]
-2016-12-30 19:15:28.086 [main] DEBUG com.dereklee.blackjack.model.AbstractHand - [3] hit with: Card [ ace  DIAMONDS  1 ]
-2016-12-30 19:15:28.087 [main] DEBUG com.dereklee.blackjack.model.AbstractHand - AbstractHand [handNum=3, card=Card [ ace  DIAMONDS  1 ], cardsVal=17]
-2016-12-30 19:15:28.087 [main] ERROR com.dereklee.blackjack.model.GameMediator - no more cards in shoe
-2016-12-30 19:15:28.088 [main] DEBUG com.dereklee.blackjack.model.GameMediatorTest - Round ends..
-2016-12-30 19:15:28.089 [main] DEBUG com.dereklee.blackjack.model.GameMediator - unable to run round, cutting card dispensed in previous round
-2016-12-30 19:15:28.089 [main] DEBUG com.dereklee.blackjack.model.GameMediatorTest - Round ends..
-2016-12-30 19:15:28.090 [main] DEBUG com.dereklee.blackjack.model.GameMediator - unable to run round, cutting card dispensed in previous round
-2016-12-30 19:15:28.090 [main] DEBUG com.dereklee.blackjack.model.GameMediatorTest - Round ends..
-2016-12-30 19:15:28.090 [main] DEBUG com.dereklee.blackjack.model.GameMediatorTest - Game Over
-2016-12-30 19:15:28.091 [main] DEBUG com.dereklee.blackjack.model.GameMediator - unable to run round, cutting card dispensed in previous round
-2016-12-30 19:15:28.091 [main] DEBUG com.dereklee.blackjack.model.GameMediatorTest - Round ends..
-2016-12-30 19:15:28.091 [main] DEBUG com.dereklee.blackjack.model.GameMediatorTest - Game Client ends..
-2016-12-30 19:15:28.092 [main] DEBUG com.dereklee.blackjack.Shoe - Shoe init
-2016-12-30 19:15:29.093 [main] DEBUG com.dereklee.blackjack.Shoe - cutPos: 35
-2016-12-30 19:15:29.094 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [0]Card [ king  SPADES  10 ]
-2016-12-30 19:15:29.094 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [1]Card [ queen  SPADES  10 ]
-2016-12-30 19:15:29.094 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [2]Card [ jack  SPADES  10 ]
-2016-12-30 19:15:29.095 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [3]Card [ ten  SPADES  10 ]
-2016-12-30 19:15:29.095 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [4]Card [ nine  SPADES  9 ]
-2016-12-30 19:15:29.095 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [5]Card [ eight  SPADES  8 ]
-2016-12-30 19:15:29.096 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [6]Card [ seven  SPADES  7 ]
-2016-12-30 19:15:29.096 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [7]Card [ six  SPADES  6 ]
-2016-12-30 19:15:29.096 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [8]Card [ five  SPADES  5 ]
-2016-12-30 19:15:29.097 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [9]Card [ four  SPADES  4 ]
-2016-12-30 19:15:29.097 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [10]Card [ three  SPADES  3 ]
-2016-12-30 19:15:29.097 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [11]Card [ two  SPADES  2 ]
-2016-12-30 19:15:29.097 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [12]Card [ ace  SPADES  1 ]
-2016-12-30 19:15:29.098 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [13]Card [ king  HEARTS  10 ]
-2016-12-30 19:15:29.098 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [14]Card [ queen  HEARTS  10 ]
-2016-12-30 19:15:29.098 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [15]Card [ jack  HEARTS  10 ]
-2016-12-30 19:15:29.099 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [16]Card [ ten  HEARTS  10 ]
-2016-12-30 19:15:29.099 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [17]Card [ nine  HEARTS  9 ]
-2016-12-30 19:15:29.099 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [18]Card [ eight  HEARTS  8 ]
-2016-12-30 19:15:29.100 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [19]Card [ seven  HEARTS  7 ]
-2016-12-30 19:15:29.100 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [20]Card [ six  HEARTS  6 ]
-2016-12-30 19:15:29.100 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [21]Card [ five  HEARTS  5 ]
-2016-12-30 19:15:29.100 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [22]Card [ four  HEARTS  4 ]
-2016-12-30 19:15:29.101 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [23]Card [ three  HEARTS  3 ]
-2016-12-30 19:15:29.101 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [24]Card [ two  HEARTS  2 ]
-2016-12-30 19:15:29.101 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [25]Card [ ace  HEARTS  1 ]
-2016-12-30 19:15:29.101 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [26]Card [ king  CLUBS  10 ]
-2016-12-30 19:15:29.102 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [27]Card [ queen  CLUBS  10 ]
-2016-12-30 19:15:29.102 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [28]Card [ jack  CLUBS  10 ]
-2016-12-30 19:15:29.102 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [29]Card [ ten  CLUBS  10 ]
-2016-12-30 19:15:29.102 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [30]Card [ nine  CLUBS  9 ]
-2016-12-30 19:15:29.103 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [31]Card [ eight  CLUBS  8 ]
-2016-12-30 19:15:29.103 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [32]Card [ seven  CLUBS  7 ]
-2016-12-30 19:15:29.103 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [33]Card [ six  CLUBS  6 ]
-2016-12-30 19:15:29.103 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [34]Card [ five  CLUBS  5 ]
-2016-12-30 19:15:29.104 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [35]Card [ cutting-card  NO_SUIT  0 ]
-2016-12-30 19:15:29.104 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [36]Card [ four  CLUBS  4 ]
-2016-12-30 19:15:29.104 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [37]Card [ three  CLUBS  3 ]
-2016-12-30 19:15:29.104 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [38]Card [ two  CLUBS  2 ]
-2016-12-30 19:15:29.105 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [39]Card [ ace  CLUBS  1 ]
-2016-12-30 19:15:29.105 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [40]Card [ king  DIAMONDS  10 ]
-2016-12-30 19:15:29.105 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [41]Card [ queen  DIAMONDS  10 ]
-2016-12-30 19:15:29.105 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [42]Card [ jack  DIAMONDS  10 ]
-2016-12-30 19:15:29.105 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [43]Card [ ten  DIAMONDS  10 ]
-2016-12-30 19:15:29.106 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [44]Card [ nine  DIAMONDS  9 ]
-2016-12-30 19:15:29.106 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [45]Card [ eight  DIAMONDS  8 ]
-2016-12-30 19:15:29.106 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [46]Card [ seven  DIAMONDS  7 ]
-2016-12-30 19:15:29.106 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [47]Card [ six  DIAMONDS  6 ]
-2016-12-30 19:15:29.107 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [48]Card [ five  DIAMONDS  5 ]
-2016-12-30 19:15:29.107 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [49]Card [ four  DIAMONDS  4 ]
-2016-12-30 19:15:29.107 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [50]Card [ three  DIAMONDS  3 ]
-2016-12-30 19:15:29.107 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [51]Card [ two  DIAMONDS  2 ]
-2016-12-30 19:15:29.107 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [52]Card [ ace  DIAMONDS  1 ]
-2016-12-30 19:15:29.108 [main] DEBUG com.dereklee.blackjack.util.BjUtil - 
-2016-12-30 19:15:29.109 [main] DEBUG com.dereklee.blackjack.Shoe - Shoe init
-2016-12-30 19:15:30.109 [main] DEBUG com.dereklee.blackjack.Shoe - cutPos: 9
-2016-12-30 19:15:30.109 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [0]Card [ king  DIAMONDS  10 ]
-2016-12-30 19:15:30.109 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [1]Card [ queen  DIAMONDS  10 ]
-2016-12-30 19:15:30.112 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [2]Card [ jack  DIAMONDS  10 ]
-2016-12-30 19:15:30.112 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [3]Card [ ten  DIAMONDS  10 ]
-2016-12-30 19:15:30.112 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [4]Card [ nine  DIAMONDS  9 ]
-2016-12-30 19:15:30.112 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [5]Card [ eight  DIAMONDS  8 ]
-2016-12-30 19:15:30.112 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [6]Card [ seven  DIAMONDS  7 ]
-2016-12-30 19:15:30.113 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [7]Card [ six  DIAMONDS  6 ]
-2016-12-30 19:15:30.113 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [8]Card [ five  DIAMONDS  5 ]
-2016-12-30 19:15:30.113 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [9]Card [ cutting-card  NO_SUIT  0 ]
-2016-12-30 19:15:30.113 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [10]Card [ four  DIAMONDS  4 ]
-2016-12-30 19:15:30.114 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [11]Card [ three  DIAMONDS  3 ]
-2016-12-30 19:15:30.114 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [12]Card [ two  DIAMONDS  2 ]
-2016-12-30 19:15:30.114 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [13]Card [ ace  DIAMONDS  1 ]
-2016-12-30 19:15:30.114 [main] DEBUG com.dereklee.blackjack.util.BjUtil - 
-2016-12-30 19:15:30.115 [main] DEBUG com.dereklee.blackjack.Shoe - card is cutting card
+2017-01-04 21:02:07.780 [main] DEBUG com.dereklee.blackjack.Shoe - Shoe init
+2017-01-04 21:02:08.787 [main] DEBUG com.dereklee.blackjack.Shoe - cutPos: 9
+2017-01-04 21:02:08.789 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [0]Card [ king  DIAMONDS  10 ]
+2017-01-04 21:02:08.790 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [1]Card [ queen  DIAMONDS  10 ]
+2017-01-04 21:02:08.790 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [2]Card [ jack  DIAMONDS  10 ]
+2017-01-04 21:02:08.790 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [3]Card [ ten  DIAMONDS  10 ]
+2017-01-04 21:02:08.791 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [4]Card [ nine  DIAMONDS  9 ]
+2017-01-04 21:02:08.791 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [5]Card [ eight  DIAMONDS  8 ]
+2017-01-04 21:02:08.791 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [6]Card [ seven  DIAMONDS  7 ]
+2017-01-04 21:02:08.791 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [7]Card [ six  DIAMONDS  6 ]
+2017-01-04 21:02:08.792 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [8]Card [ five  DIAMONDS  5 ]
+2017-01-04 21:02:08.792 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [9]Card [ cutting-card  NO_SUIT  0 ]
+2017-01-04 21:02:08.792 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [10]Card [ four  DIAMONDS  4 ]
+2017-01-04 21:02:08.793 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [11]Card [ three  DIAMONDS  3 ]
+2017-01-04 21:02:08.793 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [12]Card [ two  DIAMONDS  2 ]
+2017-01-04 21:02:08.793 [main] DEBUG com.dereklee.blackjack.util.BjUtil - [13]Card [ ace  DIAMONDS  1 ]
+2017-01-04 21:02:08.793 [main] DEBUG com.dereklee.blackjack.util.BjUtil - 
+2017-01-04 21:02:08.795 [main] DEBUG com.dereklee.blackjack.model.GameMediator - Dealing initial 2 cards to 2 hands for a total of: 4 cards
+2017-01-04 21:02:08.795 [main] DEBUG com.dereklee.blackjack.model.AbstractHand - [1] hit with: Card [ king  DIAMONDS  10 ]
+2017-01-04 21:02:08.796 [main] DEBUG com.dereklee.blackjack.model.AbstractHand - [2] hit with: Card [ queen  DIAMONDS  10 ]
+2017-01-04 21:02:08.797 [main] DEBUG com.dereklee.blackjack.model.AbstractHand - [1] Dealers up Card: Card [ queen  DIAMONDS  10 ]
+2017-01-04 21:02:08.797 [main] DEBUG com.dereklee.blackjack.model.AbstractHand - [1] hit with: Card [ jack  DIAMONDS  10 ]
+2017-01-04 21:02:08.798 [main] DEBUG com.dereklee.blackjack.model.AbstractHand - [2] hit with: Card [ ten  DIAMONDS  10 ]
+2017-01-04 21:02:08.798 [main] DEBUG com.dereklee.blackjack.model.AbstractHand - AbstractHand [handNum=1, cards=[10,10], total=20]
+2017-01-04 21:02:08.799 [main] DEBUG com.dereklee.blackjack.model.AbstractHand - [1] hit with: Card [ nine  DIAMONDS  9 ]
+2017-01-04 21:02:08.799 [main] ERROR com.dereklee.blackjack.model.GameMediator - TODO: hand is bust. AbstractHand [handNum=1, cards=[10,10,9], total=29]
+2017-01-04 21:02:08.799 [main] DEBUG com.dereklee.blackjack.model.AbstractHand - DealerHand [handNum=2, cards=[10,10], total=20]
+2017-01-04 21:02:08.800 [main] DEBUG com.dereklee.blackjack.model.GameMediator - --- End of Round Summary ---
+2017-01-04 21:02:08.800 [main] DEBUG com.dereklee.blackjack.model.GameMediator - number of hands at end of round: 2
+2017-01-04 21:02:08.800 [main] DEBUG com.dereklee.blackjack.model.GameMediator - AbstractHand [handNum=1, cards=[10,10,9], total=29]
+2017-01-04 21:02:08.800 [main] DEBUG com.dereklee.blackjack.model.GameMediator - DealerHand [handNum=2, cards=[10,10], total=20]
+2017-01-04 21:02:08.801 [main] DEBUG com.dereklee.blackjack.model.GameMediatorTest - Round ends..
+2017-01-04 21:02:08.801 [main] DEBUG com.dereklee.blackjack.model.GameMediator - Dealing initial 2 cards to 5 hands for a total of: 10 cards
+2017-01-04 21:02:08.802 [main] DEBUG com.dereklee.blackjack.model.AbstractHand - [1] hit with: Card [ eight  DIAMONDS  8 ]
+2017-01-04 21:02:08.802 [main] DEBUG com.dereklee.blackjack.model.AbstractHand - [2] hit with: Card [ seven  DIAMONDS  7 ]
+2017-01-04 21:02:08.802 [main] DEBUG com.dereklee.blackjack.model.AbstractHand - [3] hit with: Card [ six  DIAMONDS  6 ]
+2017-01-04 21:02:08.803 [main] DEBUG com.dereklee.blackjack.Shoe - card is cutting card
+2017-01-04 21:02:08.803 [main] DEBUG com.dereklee.blackjack.model.AbstractHand - [4] hit with: Card [ five  DIAMONDS  5 ]
+2017-01-04 21:02:08.803 [main] DEBUG com.dereklee.blackjack.model.GameMediator - card is cutting card
+2017-01-04 21:02:08.803 [main] DEBUG com.dereklee.blackjack.model.AbstractHand - [5] hit with: Card [ four  DIAMONDS  4 ]
+2017-01-04 21:02:08.804 [main] DEBUG com.dereklee.blackjack.model.AbstractHand - [4] Dealers up Card: Card [ four  DIAMONDS  4 ]
+2017-01-04 21:02:08.804 [main] DEBUG com.dereklee.blackjack.model.AbstractHand - [3] Dealers up Card: Card [ four  DIAMONDS  4 ]
+2017-01-04 21:02:08.804 [main] DEBUG com.dereklee.blackjack.model.AbstractHand - [2] Dealers up Card: Card [ four  DIAMONDS  4 ]
+2017-01-04 21:02:08.804 [main] DEBUG com.dereklee.blackjack.model.AbstractHand - [1] Dealers up Card: Card [ four  DIAMONDS  4 ]
+2017-01-04 21:02:08.805 [main] DEBUG com.dereklee.blackjack.model.AbstractHand - [1] hit with: Card [ three  DIAMONDS  3 ]
+2017-01-04 21:02:08.805 [main] DEBUG com.dereklee.blackjack.model.AbstractHand - [2] hit with: Card [ two  DIAMONDS  2 ]
+2017-01-04 21:02:08.805 [main] DEBUG com.dereklee.blackjack.model.AbstractHand - [3] hit with: Card [ ace  DIAMONDS  1 ]
+2017-01-04 21:02:08.806 [main] ERROR com.dereklee.blackjack.model.GameMediator - no more cards in shoe
+2017-01-04 21:02:08.806 [main] DEBUG com.dereklee.blackjack.model.GameMediator - --- End of Round Summary ---
+2017-01-04 21:02:08.806 [main] DEBUG com.dereklee.blackjack.model.GameMediator - number of hands at end of round: 5
+2017-01-04 21:02:08.806 [main] DEBUG com.dereklee.blackjack.model.GameMediator - AbstractHand [handNum=1, cards=[8,3], total=11]
+2017-01-04 21:02:08.807 [main] DEBUG com.dereklee.blackjack.model.GameMediator - AbstractHand [handNum=2, cards=[7,2], total=9]
+2017-01-04 21:02:08.807 [main] DEBUG com.dereklee.blackjack.model.GameMediator - AbstractHand [handNum=3, cards=[6,1], total=7]
+2017-01-04 21:02:08.807 [main] DEBUG com.dereklee.blackjack.model.GameMediator - AbstractHand [handNum=4, cards=[5], total=5]
+2017-01-04 21:02:08.807 [main] DEBUG com.dereklee.blackjack.model.GameMediator - DealerHand [handNum=5, cards=[4], total=4]
+2017-01-04 21:02:08.808 [main] DEBUG com.dereklee.blackjack.model.GameMediatorTest - Round ends..

@@ -1,8 +1,8 @@
 package com.dereklee.blackjack.model;
 
-import java.util.List;
-
 public interface MediatorI {
+	
+	public void addHand(AbstractHand hand);
 	
 	public void dealCard(AbstractHand hand);
 	

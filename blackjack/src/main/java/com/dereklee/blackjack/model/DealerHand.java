@@ -3,6 +3,8 @@ package com.dereklee.blackjack.model;
 import java.util.Observable;
 
 import com.dereklee.blackjack.CardI;
+import com.dereklee.blackjack.CuttingCard;
+import com.dereklee.blackjack.Suit;
 import com.dereklee.blackjack.util.BjConstants;
 
 public class DealerHand extends AbstractHand {
@@ -18,6 +20,9 @@ public class DealerHand extends AbstractHand {
 	@Override
 	public void hit(CardI card) {
 		logger.debug("[" + this.handNum + "]" + " hit with: " + card.toString());
+		if(card.equals(new CuttingCard(0, Suit.NO_SUIT, "cutting-card"))) {
+			return;
+		}
 		this.card = card;		
 		if (upCard == null && holeCard == null && cardsVal == 0) {
 			// implies initial deal
@@ -25,12 +30,14 @@ public class DealerHand extends AbstractHand {
 			// let the Mediator notify the observers of the up-card
 			notifyMediator();
 		}
+		cards.add(card);
 		this.cardsVal += card.getValue();
 	}
 
 	@Override
 	public String toString() {
-		return "DealerHand [upCard=" + upCard + ", handNum=" + handNum + ", card=" + card + ", cardsVal=" + cardsVal + "]";
+		//return "DealerHand [upCard=" + upCard + ", handNum=" + handNum + ", card=" + card + ", cardsVal=" + cardsVal + "]";
+		return "DealerHand [handNum=" + handNum + ", cards=[" + getAllCards() + "], total=" + cardsVal  + "]";
 	}
 
 	@Override

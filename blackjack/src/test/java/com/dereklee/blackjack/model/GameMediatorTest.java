@@ -1,15 +1,17 @@
 package com.dereklee.blackjack.model;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.Test;
 
 import com.dereklee.blackjack.Shoe;
-import com.dereklee.blackjack.cards.creator.CardDeckFactory;
+import com.dereklee.blackjack.cardgame.creator.BlackJackCardGameStore;
+import com.dereklee.blackjack.cardgame.creator.CardGameStore;
+import com.dereklee.blackjack.cardgame.product.CardGame;
+import com.dereklee.blackjack.cardgame.product.CardGameType;
 import com.dereklee.blackjack.cards.creator.StandardDeckFactory;
-import com.dereklee.blackjack.cards.creator.StandardDeckShuffleFactory;
 import com.dereklee.blackjack.cards.product.CardDeckType;
 
 public class GameMediatorTest {
@@ -26,21 +28,35 @@ public class GameMediatorTest {
 	
 	@Test
 	public void testGame_SimpleDeckNoSuffle() {
+		CardGameStore gameStore = new BlackJackCardGameStore();
+		CardGame game = gameStore.prepareGame(CardGameType.BLACKJACK_STANDARD);	
 //		CardDeckFactory fact = new StandardDeckFactory(new StandardDeckShuffleFactory());
 		int numDecks = 1;
 		Shoe shoe = new Shoe(numDecks, new StandardDeckFactory(), CardDeckType.SIMPLE_STANDARD_DECK);
-		GameMediator gm = new GameMediator(shoe);
+		AbstractGameMediator gm = new GameMediator(game,shoe);
+		runRound(gm,2);
+		assertTrue(!gm.isGameOver());
+		/*
+		 * 21:02:08.800 [main] DEBUG com.dereklee.blackjack.model.GameMediator - --- End of Round Summary ---
+			21:02:08.800 [main] DEBUG com.dereklee.blackjack.model.GameMediator - number of hands at end of round: 2  // TODO should be 1 (exclude bust hands)
+			21:02:08.800 [main] DEBUG com.dereklee.blackjack.model.GameMediator - AbstractHand [handNum=1, cards=[10,10,9], total=29]
+			21:02:08.800 [main] DEBUG com.dereklee.blackjack.model.GameMediator - DealerHand [handNum=2, cards=[10,10], total=20]
+		 */
+				
 		runRound(gm,5);
-		runRound(gm,5);
-		runRound(gm,5);
-		if (gm.isGameOver()) {
-			logger.debug("Game Over");
-		}
-		runRound(gm,5);
-		logger.debug("Game Client ends..");
+		/*
+		 * 21:02:08.806 [main] DEBUG com.dereklee.blackjack.model.GameMediator - --- End of Round Summary ---
+			21:02:08.806 [main] DEBUG com.dereklee.blackjack.model.GameMediator - number of hands at end of round: 5
+			21:02:08.806 [main] DEBUG com.dereklee.blackjack.model.GameMediator - AbstractHand [handNum=1, cards=[8,3], total=11]
+			21:02:08.807 [main] DEBUG com.dereklee.blackjack.model.GameMediator - AbstractHand [handNum=2, cards=[7,2], total=9]
+			21:02:08.807 [main] DEBUG com.dereklee.blackjack.model.GameMediator - AbstractHand [handNum=3, cards=[6,1], total=7]
+			21:02:08.807 [main] DEBUG com.dereklee.blackjack.model.GameMediator - AbstractHand [handNum=4, cards=[5], total=5]
+			21:02:08.807 [main] DEBUG com.dereklee.blackjack.model.GameMediator - DealerHand [handNum=5, cards=[4], total=4]
+			21:02:08.808 [main] DEBUG com.dereklee.blackjack.model.GameMediatorTest - Round ends..
+		 */
 	}
 	
-	void runRound(GameMediator gm,int numHands) {
+	void runRound(AbstractGameMediator gm,int numHands) {
 		DealerHand dealer = null;
 		int i=1;
 		for (;i<numHands; i++) {
@@ -52,14 +68,5 @@ public class GameMediatorTest {
 		logger.debug("Round ends..");
 	}	
 
-/*	private int getNumRounds(boolean isTest) {
-		GameMediator gm = new GameMediator(1, isTest);
-		int counter = 0;
-		while(!gm.isGameOver()) {
-			runRound(gm,4);
-			counter++;			
-		}
-		return counter;
-	}*/
 	
 }

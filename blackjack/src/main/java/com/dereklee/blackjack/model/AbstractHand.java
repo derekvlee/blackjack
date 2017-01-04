@@ -1,5 +1,7 @@
 package com.dereklee.blackjack.model;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Observer;
 
 import org.apache.logging.log4j.LogManager;
@@ -16,11 +18,13 @@ public abstract class AbstractHand implements Observer {
 	protected	int		  cardsVal;
 	protected 	Logger 	  logger = LogManager.getLogger();
 	protected   int		  standNum;
+	protected	List<CardI>	 cards;
 	
 	public AbstractHand(MediatorI mediator, int num) {
 		this.mediator = mediator;
 		this.handNum = num;
 		this.standNum = BjConstants.PLAYER_STAND; // default
+		this.cards = new ArrayList<CardI>();
 	}
 	
 	public abstract void hit(CardI card);
@@ -51,8 +55,25 @@ public abstract class AbstractHand implements Observer {
 
 	@Override
 	public String toString() {
-		return "AbstractHand [handNum=" + handNum + ", card=" + card + ", cardsVal=" + cardsVal + "]";
+		//return "AbstractHand [handNum=" + handNum + ", card=" + card +  ", cards= " + getAllCards() + ", cardsVal=" + cardsVal  + "]";
+		return "AbstractHand [handNum=" + handNum + ", cards=[" + getAllCards() + "], total=" + cardsVal  + "]";
 	}
 
+	protected String getAllCards() {
+		String s = "";
+		for(CardI c : cards) {
+			s += c.getValue() + ",";
+		}
+		// remove trailing comma
+		s = s.substring(0,s.length()-1);
+		return s;
+	}
+
+	public int getCardsValue() {
+		return cardsVal;
+	}
 	
+	public int getHandNum() {
+		return handNum;
+	}
 }

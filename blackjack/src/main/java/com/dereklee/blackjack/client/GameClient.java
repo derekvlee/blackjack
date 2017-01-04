@@ -4,10 +4,15 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.dereklee.blackjack.Shoe;
+import com.dereklee.blackjack.cardgame.creator.BlackJackCardGameStore;
+import com.dereklee.blackjack.cardgame.creator.CardGameStore;
+import com.dereklee.blackjack.cardgame.product.CardGame;
+import com.dereklee.blackjack.cardgame.product.CardGameType;
 import com.dereklee.blackjack.cards.creator.CardDeckFactory;
 import com.dereklee.blackjack.cards.creator.StandardDeckFactory;
 import com.dereklee.blackjack.cards.creator.StandardDeckShuffleFactory;
 import com.dereklee.blackjack.cards.product.CardDeckType;
+import com.dereklee.blackjack.model.AbstractGameMediator;
 import com.dereklee.blackjack.model.DealerHand;
 import com.dereklee.blackjack.model.DealerHandObs;
 import com.dereklee.blackjack.model.GameMediator;
@@ -20,10 +25,15 @@ public class GameClient {
 	public static void main(String[] args) {
 		
 		GameClient client = new GameClient();
-		CardDeckFactory fact = new StandardDeckFactory(new StandardDeckShuffleFactory());
+		// Create the card deck
+		//CardDeckFactory fact = new StandardDeckFactory(new StandardDeckShuffleFactory());
+		// Create the Dealers shoe
 		Shoe shoe = new Shoe(1, new StandardDeckFactory(), CardDeckType.SIMPLE_STANDARD_DECK);
-		
-		GameMediator gm = new GameMediator(shoe);
+		// Create the card game type
+		CardGameStore gameStore = new BlackJackCardGameStore();
+		CardGame game = gameStore.prepareGame(CardGameType.BLACKJACK_STANDARD);		
+		// Run the Game
+		AbstractGameMediator gm = new GameMediator(game, shoe);
 		client.runRound(gm);
 		client.runRound(gm);
 		client.runRound(gm);
@@ -31,7 +41,7 @@ public class GameClient {
 		logger.debug("Game Client ends..");
 	}
 	
-	void runRound(GameMediator gm) {
+	void runRound(AbstractGameMediator gm) {
 		DealerHand dealer = null;
 		int i=0;
 		for (i=1; i<5; i++) {

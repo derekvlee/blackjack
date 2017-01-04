@@ -14,6 +14,7 @@ public class Hand extends AbstractHand {
 	public void hit(CardI card) {
 		logger.debug("[" + this.handNum + "]" + " hit with: " + card.toString());
 		this.card = card;
+		cards.add(card);
 		this.cardsVal += card.getValue();
 	}
 
