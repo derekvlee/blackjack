@@ -9,6 +9,7 @@ import com.dereklee.blackjack.cards.creator.StandardDeckShuffleFactory;
 import com.dereklee.blackjack.cards.product.CardDeck;
 import com.dereklee.blackjack.cards.product.CardDeckType;
 
+// TODO is this still required?
 public class CreateCardDeckMain {
 	public static void main(String[] args) {
 		CardDeckFactory standardDeckFactory = new StandardDeckFactory(new StandardDeckShuffleFactory());

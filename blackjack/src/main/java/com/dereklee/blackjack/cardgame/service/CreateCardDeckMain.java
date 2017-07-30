@@ -13,5 +13,7 @@ public class CreateCardDeckMain {
 		CardGame game = gameStore.prepareGame(CardGameType.BLACKJACK_STANDARD);
 		//CardGame game = new BlackJackCardGame();
 		game.getInitialCardDealNumber();
+		
+		// TODO needs more work
 	}
 }

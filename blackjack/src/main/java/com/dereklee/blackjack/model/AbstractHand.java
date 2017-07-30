@@ -8,8 +8,18 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.dereklee.blackjack.CardI;
+import com.dereklee.blackjack.rulesengine.BJStrategy;
+import com.dereklee.blackjack.rulesengine.BJStrategyRules;
+import com.dereklee.blackjack.rulesengine.PlayerHandInfo;
 import com.dereklee.blackjack.util.BjConstants;
 
+/**
+ * The AbstractHand represents a player/dealers Hand of cards. 
+ * It implements the Observer interface so it can be notified of changes.
+ *  
+ * @author Derek
+ *
+ */
 public abstract class AbstractHand implements Observer {
 
 	protected 	MediatorI mediator;
@@ -46,6 +56,12 @@ public abstract class AbstractHand implements Observer {
 		// TODO makeDecision based on strategy
 		// TODO hand need notification on dealers up card
 		logger.debug(toString());
+		
+		// establish the (player) hands knowledge of the dealers up card
+		PlayerHandInfo info = new PlayerHandInfo(this);
+		BJStrategy strategy = BJStrategyRules.callRules(info);
+		logger.debug("strategy("+strategy+") for handNum=" + handNum + " and totalCardValue=("+info.getPlayerCardsValue()+") with DealersUpCard("+info.getDealersUpCardValue()+")");
+		
 		if (cardsVal < standNum) {
 			mediator.sendCallBack(CardOption.HIT, this);
 		} else {

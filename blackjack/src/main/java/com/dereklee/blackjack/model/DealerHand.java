@@ -55,7 +55,8 @@ public class DealerHand extends AbstractHand {
 	}
 	
 	private void notifyMediator() {
-		mediator.sendCallBack(CardOption.DEALERS_UPCARD, this);
+		//mediator.sendCallBack(CardOption.DEALERS_UPCARD, this);
+		mediator.sendCallBackFromDealer(CardOption.DEALERS_UPCARD, this);
 	}
 
 }

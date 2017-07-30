@@ -25,12 +25,10 @@ public class StandardDeckShuffleFactory implements CardDeckShuffleFactory {
 	
 	public StandardDeckShuffleFactory() {}
 	
-	@Override
 	public void shuffle(CardDeck deck) {
 		shuffle(deck, this.seed);
 	}
 
-	@Override
 	public void shuffle(CardDeck cardDeck, long seed) {
 		Random rand = (seed > 0) ? new Random(seed) : new Random();
 		List<CardI> deck = cardDeck.getDeck();
@@ -45,7 +43,6 @@ public class StandardDeckShuffleFactory implements CardDeckShuffleFactory {
 		cardDeck.setDeck(newDeck);
 	}
 
-	@Override
 	public void setSeed(long seed) {
 		this.seed = seed;
 	}

@@ -60,7 +60,7 @@ public class GameMediatorTest {
 		DealerHand dealer = null;
 		int i=1;
 		for (;i<numHands; i++) {
-			gm.addHand(new Hand(gm,i));
+			gm.addHand(new PlayerHand(gm,i));
 		}
 		dealer = new DealerHand(gm,i);
 		gm.addHand(dealer);

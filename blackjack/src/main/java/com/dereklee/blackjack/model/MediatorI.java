@@ -8,4 +8,6 @@ public interface MediatorI {
 	
 	public void sendCallBack(CardOption option, AbstractHand hand);
 	
+	public void sendCallBackFromDealer(CardOption option, AbstractHand hand);
+	
 }

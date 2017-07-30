@@ -3,10 +3,13 @@ package com.dereklee.blackjack.model;
 import java.util.Observable;
 
 import com.dereklee.blackjack.CardI;
+import com.dereklee.blackjack.NumberCard;
 
-public class Hand extends AbstractHand {
+public class PlayerHand extends AbstractHand {
+	
+	private CardI dealersUpCard;
 
-	public Hand(MediatorI mediator, int num) {
+	public PlayerHand(MediatorI mediator, int num) {
 		super(mediator, num);
 	}
 
@@ -22,9 +25,16 @@ public class Hand extends AbstractHand {
 	public void stand() {
 	}
 
-	// Observer 
-	public void update(Observable o, Object arg) {
-		logger.debug( "[" + this.handNum + "]" + " Dealers up Card: " + arg.toString() );
+	// Observer - informed of changes
+	public void update(Observable o, Object obj) {
+		logger.debug( "[" + this.handNum + "]" + " Dealers up Card: " + obj.toString() );
+		if(obj instanceof CardI) {
+			dealersUpCard = ((CardI) obj);
+		}
+	}
+	
+	public CardI getDealersUpCard() {
+		return dealersUpCard;
 	}
 
 }

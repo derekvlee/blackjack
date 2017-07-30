@@ -8,11 +8,11 @@ import com.sun.net.httpserver.HttpHandler;
 import com.sun.net.httpserver.HttpServer;
 
 /**
- * The code for this class this was derived from a web services book:
+ * The code for this class was derived from the following book:
  * 	"Java Web Services - Up and Running" by Martin Kalin
  * 
  * 
- * This class acts as a standalone application to publish the 'Bank' JAX-RS service.
+ * This class acts as a stand-alone Java application which publishes the 'Bank' JAX-RS service.
  * 
  *
  *

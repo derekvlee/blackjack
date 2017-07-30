@@ -16,7 +16,7 @@ import com.dereklee.blackjack.model.AbstractGameMediator;
 import com.dereklee.blackjack.model.DealerHand;
 import com.dereklee.blackjack.model.DealerHandObs;
 import com.dereklee.blackjack.model.GameMediator;
-import com.dereklee.blackjack.model.Hand;
+import com.dereklee.blackjack.model.PlayerHand;
 
 public class GameClient {
 
@@ -24,16 +24,17 @@ public class GameClient {
 	
 	public static void main(String[] args) {
 		
-		GameClient client = new GameClient();
-		// Create the card deck
-		//CardDeckFactory fact = new StandardDeckFactory(new StandardDeckShuffleFactory());
-		// Create the Dealers shoe
-		Shoe shoe = new Shoe(1, new StandardDeckFactory(), CardDeckType.SIMPLE_STANDARD_DECK);
 		// Create the card game type
 		CardGameStore gameStore = new BlackJackCardGameStore();
 		CardGame game = gameStore.prepareGame(CardGameType.BLACKJACK_STANDARD);		
-		// Run the Game
+		// Create the Dealers shoe
+		//Shoe shoe = new Shoe(1, new StandardDeckFactory(), CardDeckType.SIMPLE_STANDARD_DECK);  // TODO create a unit test base on this card deck
+		Shoe shoe = new Shoe(1, new StandardDeckFactory(), CardDeckType.STANDARD_DECK);
+		// Instantiate the GameMediator
 		AbstractGameMediator gm = new GameMediator(game, shoe);
+		
+		// Run the Game
+		GameClient client = new GameClient();
 		client.runRound(gm);
 		client.runRound(gm);
 		client.runRound(gm);
@@ -45,7 +46,7 @@ public class GameClient {
 		DealerHand dealer = null;
 		int i=0;
 		for (i=1; i<5; i++) {
-			gm.addHand(new Hand(gm,i));
+			gm.addHand(new PlayerHand(gm,i));
 		}
 		dealer = new DealerHand(gm,i);
 		gm.addHand(dealer);

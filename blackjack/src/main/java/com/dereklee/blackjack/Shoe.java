@@ -57,7 +57,7 @@ public class Shoe {
 		insertCuttingCard();
 		shoeIt = decks.iterator();
 		
-		BjUtil.printAll(decks); // TODO should only be used for debug
+		//BjUtil.printAll(decks); // TODO should only be used for debug
 		
 		if(shoeIt.hasNext()) {
 			nextCard = shoeIt.next();

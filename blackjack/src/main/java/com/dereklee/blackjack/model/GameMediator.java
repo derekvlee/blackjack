@@ -16,11 +16,11 @@ import com.dereklee.blackjack.cardgame.product.CardGame;
 import com.dereklee.blackjack.util.BjConstants;
 
 /**
+ * The Mediator notifies the Observers of the dealers up-card
  * 
  * @author Derek
  *
  */
-//public class GameMediator extends Observable implements MediatorI, Iterator<AbstractHand> {
 public class GameMediator extends AbstractGameMediator {
 	
 	private Logger logger = LogManager.getLogger();
@@ -95,7 +95,8 @@ public class GameMediator extends AbstractGameMediator {
 	}
 
 	/**
-	 * Starts offering to deal to the first hand, invoking a 'makeDecision()' on the hand. Waits (synchronous) for a callback on the decision. 
+	 * Starts offering to deal to the first hand, invoking a 'makeDecision()' on the hand. 
+	 * Waits (synchronous) for a callback on the decision. 
 	 * Continues offering to deal to all playing Hands for this round.
 	 * 
 	 * PreCondition: 
@@ -188,6 +189,13 @@ public class GameMediator extends AbstractGameMediator {
 		case STAND:
 			getNextHand();
 			break;
+		default:
+			
+		}
+	}
+	
+	public void sendCallBackFromDealer(CardOption option, AbstractHand aHand) {
+		switch(option) {
 		case DEALERS_UPCARD:
 			if(aHand instanceof DealerHand) { // only for initial deal
 				this.setChanged();
@@ -199,6 +207,7 @@ public class GameMediator extends AbstractGameMediator {
 			
 		}
 	}
+	
 	@Override
 	public boolean isGameOver() {
 		return bCutCard;
@@ -222,6 +231,7 @@ public class GameMediator extends AbstractGameMediator {
 	public AbstractHand next() {
 		return handIt.next();
 	}
+
 
 	///////////////////////////////////////////////////////
 	//
