@@ -24,8 +24,8 @@ com.dereklee.blackjack.rest.Bank
 ##### Rules Engine:
 com.dereklee.blackjack.rulesengine.BJStrategyRules
 ##### Tests:
-com.dereklee.blackjack.rulesengine.BJStrategyRulesTest
-com.dereklee.blackjack.model.GameMediatorTest
-com.dereklee.blackjack.cards.creator.CardDeckFactoryTest
+* com.dereklee.blackjack.rulesengine.BJStrategyRulesTest
+* com.dereklee.blackjack.model.GameMediatorTest
+* com.dereklee.blackjack.cards.creator.CardDeckFactoryTest
 
 
