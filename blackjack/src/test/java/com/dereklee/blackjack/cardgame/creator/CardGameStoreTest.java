@@ -21,7 +21,7 @@ public class CardGameStoreTest {
 		//game.initDeal();
 		
 		int numDecks = 1;
-		Shoe shoe = new Shoe(numDecks, new StandardDeckFactory(), CardDeckType.SIMPLE_STANDARD_DECK);
+		Shoe shoe = new Shoe(numDecks, new StandardDeckFactory(), CardDeckType.QUARTER_DECK);
 		AbstractGameMediator gm = new GameMediator(game, shoe);
 		
 		

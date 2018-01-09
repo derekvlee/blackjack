@@ -16,8 +16,6 @@ public abstract class AbstractGameMediator extends Observable implements Mediato
 		this.shoe = shoe;
 	}
 	
-	//public abstract void initDeal(); // this should come from cardGame
-	
 	public abstract void runRound();
 	
 	public abstract boolean isGameOver();

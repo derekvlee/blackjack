@@ -13,6 +13,7 @@ import com.dereklee.blackjack.CuttingCard;
 import com.dereklee.blackjack.Shoe;
 import com.dereklee.blackjack.Suit;
 import com.dereklee.blackjack.cardgame.product.CardGame;
+import com.dereklee.blackjack.rulesengine.BJStrategy;
 import com.dereklee.blackjack.util.BjConstants;
 
 /**
@@ -29,6 +30,7 @@ public class GameMediator extends AbstractGameMediator {
 	private AbstractHand 			hand; 	// current hand	
 	private boolean					bCutCard;
 	private boolean 				bRoundOver;	
+	private	int						dealerTotal;
 	
 	/**
 	 * Construct a GameMediator object
@@ -116,10 +118,49 @@ public class GameMediator extends AbstractGameMediator {
 				hand.makeDecision();
 			}
 			// round over
-			// TODO pay winning bets, take losing bets			
-			printEndOfRoundSummary();
-			reset();
+			manageRoundEnd();
 		}
+	}
+	
+	/**
+	 * Pay winning bets, take losing bets	
+	 */
+	private void manageRoundEnd() {
+		printEndOfRoundSummary();
+		logger.debug("--- manageRoundEnd ---");
+		boolean dealerIsBust = false;
+		if (dealerTotal > BjConstants.MAX_CARDS_VALUE) {
+			dealerIsBust = true;
+		}
+		
+		for (AbstractHand h : hands) {
+			int playerTotal = -1;
+			if(h instanceof PlayerHand) {
+				playerTotal = h.getCardsValue();
+				if (h.hasBust) {
+					// dealer wins the bet from the PlayerHand
+					logger.debug("PlayerHand bust: dealer wins the bet from the PlayerHand");
+					// and the PlayerHand is updated to be Lost
+				} else if (!dealerIsBust && dealerTotal < playerTotal){
+					// the dealer pays the bet at the PlayerHand
+					logger.debug("PlayerHand won: dealer pays the bet at the PlayerHand");
+				} else if (!dealerIsBust && dealerTotal == playerTotal){ 
+					// the cardTotals are equal so the bet is pushed
+					logger.debug("cardTotals are equal so the bet is pushed");
+				} else if (dealerIsBust) {
+					// we know the playerHand is not bust, so we just pay the PlayerHand
+					logger.debug("DealerBust, PlayerHand won: dealer pays the bet at the PlayerHand");
+				}
+				
+				// TODO any other condition?
+				
+			}
+		}
+		
+		// other
+		
+		reset();
+		
 	}
 	
 	private void printEndOfRoundSummary() {
@@ -166,8 +207,10 @@ public class GameMediator extends AbstractGameMediator {
 	
 	private void handleBust(AbstractHand aHand) {
 		if(aHand.getCardsValue() > BjConstants.MAX_CARDS_VALUE) {
-			// TODO
-			logger.error("TODO: hand is bust. " + aHand.toString());
+			aHand.setBust(true);
+			// TODO should the hand be removed from the list of hands?
+			// If so, we would need to have a special case for the dealer
+			logger.info("hand is bust. " + aHand.toString());
 			getNextHand();
 		}
 	}
@@ -175,38 +218,40 @@ public class GameMediator extends AbstractGameMediator {
 	private void getNextHand() {
 		hand = hasNext() ? next() : null;
 	}
-
+	
 	/**
 	 * CallBack method, invoked by each Hand when it's asked to make a decision on how to play/proceed.
-	 * Also used by Dealer to signify it's up-card. 
 	 */
-	public void sendCallBack(CardOption option, AbstractHand aHand) {
-		//this.currHand = aHand; // TODO is the given Hand reference needed?
-		switch(option) {
-		case HIT:
-			dealCard(hand);
-			break;
+	public void callBack(BJStrategy strategy) {
+		switch(strategy) {
 		case STAND:
 			getNextHand();
 			break;
+		case HIT:
+			dealCard(hand);
+			break;			
+		case DOUBLE:
+			logger.debug("TODO implement DOUBLE");
+			dealCard(hand); // temp workaround
+			break;
+		case SPLIT:
+			logger.debug("TODO implement SPLIT");
+			dealCard(hand); // temp workaround
+			break;			
 		default:
-			
+			throw new RuntimeException("Unexpected callback");
 		}
 	}
 	
-	public void sendCallBackFromDealer(CardOption option, AbstractHand aHand) {
-		switch(option) {
-		case DEALERS_UPCARD:
-			if(aHand instanceof DealerHand) { // only for initial deal
-				this.setChanged();
-				this.notifyObservers(((DealerHand) aHand).getUpCard());
-				this.clearChanged();
-			}
-			break;
-		default:
-			
-		}
+	public void notifyPlayers(CardI upCard) {
+		this.setChanged();
+		this.notifyObservers(upCard);
+		this.clearChanged();
 	}
+		
+	public void setDealersTotal(int cardTotal) {
+		this.dealerTotal = cardTotal;
+	}		
 	
 	@Override
 	public boolean isGameOver() {
@@ -231,7 +276,6 @@ public class GameMediator extends AbstractGameMediator {
 	public AbstractHand next() {
 		return handIt.next();
 	}
-
 
 	///////////////////////////////////////////////////////
 	//

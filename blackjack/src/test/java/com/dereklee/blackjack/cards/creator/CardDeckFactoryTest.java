@@ -47,7 +47,7 @@ public class CardDeckFactoryTest {
 	public void testSimpleDeckFactory() {
 		//CardDeckFactory fact = new StandardDeckFactory(new SimpleDeckShuffleFactory());
 		CardDeckFactory fact = new StandardDeckFactory();
-		CardDeck cardDeck = fact.prepareCardDeck(CardDeckType.SIMPLE_STANDARD_DECK);		
+		CardDeck cardDeck = fact.prepareCardDeck(CardDeckType.QUARTER_DECK);		
 		List<CardI> deck = cardDeck.getDeck();
 		assertEquals(13, deck.size());
 		

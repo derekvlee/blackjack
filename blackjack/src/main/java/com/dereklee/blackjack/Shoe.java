@@ -3,9 +3,11 @@ package com.dereklee.blackjack;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
+import java.util.logging.Level;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.core.config.Configurator;
 
 import com.dereklee.blackjack.cards.creator.CardDeckFactory;
 import com.dereklee.blackjack.cards.product.CardDeck;
@@ -50,8 +52,7 @@ public class Shoe {
 	 * Prepares the shoe Iterator<CardI> ready to dispense the first playing card.
 	 */	
 	private void init() {
-		logger.debug("Shoe init");				
-		cardDeckFactory.setShuffleSeed(genRand());
+		cardDeckFactory.setShuffleSeed(genSeed());
 		CardDeck cardDeck = cardDeckFactory.prepareCardDecks(cardDeckType, numDecks);
 		decks = cardDeck.getDeck();
 		insertCuttingCard();
@@ -71,7 +72,7 @@ public class Shoe {
 	 */
 	private void insertCuttingCard() {		
 		int cutPos = (decks.size() - (decks.size()/3)) ;
-		logger.debug("cutPos: " + cutPos);
+		//logger.debug("cutPos: " + cutPos);
 		decks.add(cutPos,new CuttingCard(0, Suit.NO_SUIT, "cutting-card"));
 	}
 	
@@ -100,9 +101,9 @@ public class Shoe {
 		return card;
 	}
 	
-	// generate a random long based on the current time in milliseconds and
-	// sleeps for a duration to allow for different seed generation
-	private long genRand() {
+	// Creates the seed by generating a random long based on the current time.
+	// Sleeps for a short duration to allow for different seed generation. 
+	private long genSeed() {
 		randInt = new Random(System.currentTimeMillis()).nextInt(BOUNDS);
 		randLong = new Random(System.currentTimeMillis()).nextLong();
 		try {

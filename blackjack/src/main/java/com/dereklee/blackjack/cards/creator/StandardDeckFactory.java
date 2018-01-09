@@ -24,7 +24,7 @@ public class StandardDeckFactory extends CardDeckFactory {
 		case STANDARD_DECK:
 			deck = new StandardDeck(shuffleFactory);
 			break;
-		case SIMPLE_STANDARD_DECK:
+		case QUARTER_DECK:
 			deck = new SimpleDeck(shuffleFactory, Suit.DIAMONDS);
 			break;
 		}

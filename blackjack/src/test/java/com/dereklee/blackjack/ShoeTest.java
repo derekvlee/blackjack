@@ -29,7 +29,7 @@ public class ShoeTest {
 		//CardDeckShuffleFactory shuffle = new StandardDeckShuffleFactory();
 		CardDeckFactory cdf = new StandardDeckFactory();
 		int numDecks = 1;
-		Shoe shoe = new Shoe(numDecks, cdf, CardDeckType.SIMPLE_STANDARD_DECK);
+		Shoe shoe = new Shoe(numDecks, cdf, CardDeckType.QUARTER_DECK);
 		assertEquals((numDecks*BjConstants.SIMPLE_DECK_SIZE)+1, shoe.getDeckSize()); // + 1 for card cut
 		
 		CardI card = null;

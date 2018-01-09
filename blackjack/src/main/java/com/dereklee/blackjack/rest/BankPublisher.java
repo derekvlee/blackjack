@@ -46,7 +46,7 @@ public class BankPublisher {
     }	
 	
 	private void msg(HttpServer server) {
-		String out = "Publishing RestfulAdage on " + url + ". Hit any key to stop.";
+		String out = "Publishing BankPublisher on " + url + ". Hit any key to stop.";
 		System.out.println(out);
 		try {
 		    System.in.read();

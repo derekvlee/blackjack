@@ -8,13 +8,10 @@ import com.dereklee.blackjack.cardgame.creator.BlackJackCardGameStore;
 import com.dereklee.blackjack.cardgame.creator.CardGameStore;
 import com.dereklee.blackjack.cardgame.product.CardGame;
 import com.dereklee.blackjack.cardgame.product.CardGameType;
-import com.dereklee.blackjack.cards.creator.CardDeckFactory;
 import com.dereklee.blackjack.cards.creator.StandardDeckFactory;
-import com.dereklee.blackjack.cards.creator.StandardDeckShuffleFactory;
 import com.dereklee.blackjack.cards.product.CardDeckType;
 import com.dereklee.blackjack.model.AbstractGameMediator;
 import com.dereklee.blackjack.model.DealerHand;
-import com.dereklee.blackjack.model.DealerHandObs;
 import com.dereklee.blackjack.model.GameMediator;
 import com.dereklee.blackjack.model.PlayerHand;
 

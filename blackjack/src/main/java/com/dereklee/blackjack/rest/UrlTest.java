@@ -8,6 +8,9 @@ import java.net.URLConnection;
 
 public class UrlTest {
 	
+	// DL Note: not sure why this isn't working
+	// Instead see BankPublisher.java
+	
     private static final int port = 9876;
     private static final String uri = "/resourcesBank/balance/511";
     private static final String url = "http://localhost:" + port + uri;
