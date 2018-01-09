@@ -1,6 +1,8 @@
 # blackjack
-# Designed and developed by Derek Lee.
-# All the code within this project is my own unless explicitly stated otherwise.
+
+Designed and developed by Derek Lee.
+
+All the code within this project is my own unless explicitly stated otherwise.
 
 Purpose:
 To design and develop a simulation of the card game - BlackJack. 
@@ -13,24 +15,32 @@ The project is a work in progress.
 
 Relevant Classes:
 
-Main Class 
+Main Class:
+
 com.dereklee.blackjack.client.GameClient
 
-Game Mediator
+Game Mediator:
+
 com.dereklee.blackjack.model.GameMediator
 
-Hand
+Hand:
+
 com.dereklee.blackjack.model.AbstractHand
 
-Bank
+Bank:
+
 com.dereklee.blackjack.rest.Bank
 
-Rules Engine
+Rules Engine:
+
 com.dereklee.blackjack.rulesengine.BJStrategyRules
 
-Tests
+Tests:
+
 com.dereklee.blackjack.rulesengine.BJStrategyRulesTest
+
 com.dereklee.blackjack.model.GameMediatorTest
+
 com.dereklee.blackjack.cards.creator.CardDeckFactoryTest
 
 
