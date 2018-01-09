@@ -10,7 +10,7 @@ import com.dereklee.blackjack.cardgame.product.CardGameType;
  */
 public abstract class CardGameStore {
 
-	public CardGame prepareGame(CardGameType type) { // should this be called PlayGame ?
+	public CardGame prepareGame(CardGameType type) { 
 		
 		CardGame game = createCardGame(type);
 		game.getInitialCardDealNumber();

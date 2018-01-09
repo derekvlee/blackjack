@@ -25,7 +25,6 @@ public class GameClient {
 		CardGameStore gameStore = new BlackJackCardGameStore();
 		CardGame game = gameStore.prepareGame(CardGameType.BLACKJACK_STANDARD);		
 		// Create the Dealers shoe
-		//Shoe shoe = new Shoe(1, new StandardDeckFactory(), CardDeckType.SIMPLE_STANDARD_DECK);  // TODO create a unit test base on this card deck
 		Shoe shoe = new Shoe(1, new StandardDeckFactory(), CardDeckType.STANDARD_DECK);
 		// Instantiate the GameMediator
 		AbstractGameMediator gm = new GameMediator(game, shoe);
